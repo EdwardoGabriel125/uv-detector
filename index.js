@@ -17,6 +17,10 @@ app.get("/" , (req, res) => {
     res.render("index.ejs");
 })
 
+app.get("/post", (req,res) => {
+    res.redirect("/");
+})
+
 app.post("/protetor" , async (req, res) => {
     try{
         const data = {
