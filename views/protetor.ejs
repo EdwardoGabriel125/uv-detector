@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<% let color = "" %>
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    h1{
+        letter-spacing: 1px;
+    }
+
+    p{
+        font-size: larger;
+    }
+</style>
+
+<body>
+    <h1>Deve usar protetor na sua cidade?</h1>
+
+    <p id="texto-principal"><%= texto %></p> <span>U.V : <%= uv %></span>
+
+    <script>
+        const textPrincipal = document.getElementById("texto-principal").innerHTML;
+        if (textPrincipal === "O seu nível é baixo, não precisa passar"){
+            document.body.style.setProperty('background-color', '#558B2F');
+        }
+        else if (textPrincipal === "Nível moderado, é recomendado passar a depender do tom de pele"){
+            document.body.style.setProperty('background-color', '#F9A825');
+        }
+        else if (textPrincipal === "Alto, use protetor solar!"){
+            document.body.style.setProperty('background-color', "#EF6C00");
+        }
+        else if (textPrincipal === "Muito alto, use protetor solar!"){
+            document.body.style.setProperty('background-color', "#B71C1C");
+        }
+        else if (textPrincipal === "Extremamente alto! Use protetor solar para cuidar da sua pele!"){
+            document.body.style.setProperty('background-color', "#6A1B9A");     
+        }
+    </script>
+</body>
+</html>
