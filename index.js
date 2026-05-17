@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const key = process.env.UVKEY;
-
+const porta = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -57,9 +57,6 @@ app.post("/protetor" , async (req, res) => {
 
         res.render("protetor.ejs", {texto : texto, uv : uv});
 
-        // https://www.openuv.io/dashboard?tab=0 
-        // Terminar de encher com os parametros e senhas de API. Lembrar como funciona os headers e params, depois colocar lá
-        // ,utilizando o body.req e o range do site se precisa de protetor ou não, se o usuario vai precisar de protetor ou nao.
     }
     catch(error){
         if(error.response){
@@ -71,4 +68,4 @@ app.post("/protetor" , async (req, res) => {
     }
 })
 
-app.listen(3000, () => console.log("Servidor rodando em 3000"));
+app.listen(porta, () => console.log(`Servidor rodando em {porta}`));
