@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const key = process.env.UVKEY;
+const key = openuv-3qvalrmlk8pscw-io;
 const porta = process.env.PORT || 3000;
 const app = express();
 
